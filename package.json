@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "@paralleldrive/cuid2": "^2.2.2",
+    "@prisma/client": "^5.22.0",
+    "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
+    "jsonwebtoken": "^9.0.2",
+    "pino": "^9.5.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.22.0"
+  }
+}
