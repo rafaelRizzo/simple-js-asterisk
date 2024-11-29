@@ -20,17 +20,22 @@ class AGIHandler {
     }
 
     /**
-     * Envia as variáveis do buffer ao Asterisk.
-     * @param {string} channelId - ID do canal Asterisk.
-     * @param {string} uniqueId - Identificador único da chamada.
-     */
+ * Envia as variáveis do buffer ao Asterisk.
+ * @param {string} channelId - ID do canal Asterisk.
+ * @param {string} uniqueId - Identificador único da chamada.
+ */
     sendVariables(channelId, uniqueId) {
         if (this.variableBuffer.length > 0) {
             logger.info(
                 `[${channelId}] [${uniqueId}] Variables sent to Asterisk:\n${this.variableBuffer.join("\n")}`
             );
 
-            console.log(this.variableBuffer.join("\n"));
+            // Enviar variáveis para o Asterisk
+            for (const command of this.variableBuffer) {
+                logger.log(command);
+            }
+
+            // Limpando o buffer para evitar duplicações
             this.variableBuffer.length = 0;
         }
     }
